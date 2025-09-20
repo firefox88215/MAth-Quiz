@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Quiz App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px 30px;
+      width: 90%;
+      max-width: 700px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #444;
+    }
+    .topics {
+      margin-bottom: 20px;
+    }
+    .topics label {
+      display: block;
+      margin: 5px 0;
+      font-size: 16px;
+    }
+    select, button {
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button {
+      background: #ff7e5f;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #eb5e3d;
+    }
+    .quiz {
+      display: none;
+    }
+    .question {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    .options button {
+      display: block;
+      width: 100%;
+      margin: 6px 0;
+      background: #f0f0f0;
+      color: #333;
+      border: 1px solid #ccc;
+    }
+    .options button.correct {
+      background: #4CAF50;
+      color: white;
+    }
+    .options button.wrong {
+      background: #F44336;
+      color: white;
+    }
+    .result {
+      display: none;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Math Quiz App</h1>
+
+    <!-- Topic Selection -->
+    <div class="setup">
+      <h3>Select Topics:</h3>
+      <div class="topics">
+        <label><input type="checkbox" value="arithmetic_definition"> Arithmetic: Definition</label>
+        <label><input type="checkbox" value="arithmetic_nthterm"> Arithmetic: Nth Term</label>
+        <label><input type="checkbox" value="arithmetic_firstterm"> Arithmetic: First Term</label>
+        <label><input type="checkbox" value="arithmetic_common_difference"> Arithmetic: Common Difference</label>
+        <label><input type="checkbox" value="arithmetic_means"> Arithmetic: Means</label>
+        <label><input type="checkbox" value="arithmetic_series_sum"> Arithmetic: Series Sum</label>
+        <label><input type="checkbox" value="geometric_definition"> Geometric: Definition</label>
+        <label><input type="checkbox" value="geometric_nthterm"> Geometric: Nth Term</label>
+        <label><input type="checkbox" value="geometric_firstterm"> Geometric: First Term</label>
+        <label><input type="checkbox" value="geometric_common_ratio"> Geometric: Common Ratio</label>
+        <label><input type="checkbox" value="geometric_means"> Geometric: Means</label>
+        <label><input type="checkbox" value="geometric_series_sum"> Geometric: Series Sum</label>
+      </div>
+
+      <h3>Select Number of Questions:</h3>
+      <select id="numQuestions">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+      </select>
+
+      <button id="startBtn">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Area -->
+    <div class="quiz">
+      <div class="question"></div>
+      <div class="options"></div>
+      <button id="nextBtn">Next</button>
+    </div>
+
+    <!-- Result -->
+    <div class="result"></div>
+  </div>
+
+  <!-- Load Question Files -->
+  <script src="questions/arithmetic_definition.js"></script>
+  <script src="questions/arithmetic_nthterm.js"></script>
+  <script src="questions/arithmetic_firstterm.js"></script>
+  <script src="questions/arithmetic_common_difference.js"></script>
+  <script src="questions/arithmetic_means.js"></script>
+  <script src="questions/arithmetic_series_sum.js"></script>
+  <script src="questions/geometric_definition.js"></script>
+  <script src="questions/geometric_nthterm.js"></script>
+  <script src="questions/geometric_firstterm.js"></script>
+  <script src="questions/geometric_common_ratio.js"></script>
+  <script src="questions/geometric_means.js"></script>
+  <script src="questions/geometric_series_sum.js"></script>
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
+</html>
